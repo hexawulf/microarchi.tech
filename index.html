@@ -5,85 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Microarchi.tech | 台灣行動微型建築有限公司</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="lang-toggle">
-                <button id="lang-tw" class="active">中文 (zh-TW)</button>
-                <button id="lang-en">English (en)</button>
+    <div class="css-grid-bg"></div>
+    <div class="glow-overlay"></div>
+
+    <header class="navbar">
+        <div class="logo">Microarchi.tech</div>
+        <nav>
+            <button class="nav-btn" onclick="document.getElementById('build').scrollIntoView({behavior: 'smooth'})">技術領域</button>
+            <button class="nav-btn" onclick="document.getElementById('showcase').scrollIntoView({behavior: 'smooth'})">產品特色</button>
+            <button class="nav-btn" onclick="document.getElementById('company').scrollIntoView({behavior: 'smooth'})">關於我們</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero fade-in">
+            <div class="hero-content">
+                <h1 class="hero-title">台灣行動微型建築有限公司</h1>
+                <h2 class="hero-subtitle">Microarchi.tech</h2>
+                <p class="hero-description">AI-powered spatial intelligence for mobile micro-architecture.<br>為行動微型建築注入 AI 空間智能。</p>
+
+                <div class="hero-cta">
+                    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">聯絡我們 Contact us</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('build').scrollIntoView({behavior: 'smooth'})">探索技術 Explore technology</button>
+                </div>
             </div>
-            <div class="logo">
-                <h1 class="lang-tw">台灣行動微型建築有限公司</h1>
-                <h1 class="lang-en hidden">Microarchi.tech</h1>
+
+            <div class="hero-visual">
+                <div class="abstract-shape shape-1"></div>
+                <div class="abstract-shape shape-2"></div>
+                <div class="abstract-shape shape-3"></div>
             </div>
-        </header>
+        </section>
 
-        <main>
-            <section class="company-info">
-                <div class="info-item">
-                    <h2 class="lang-tw">公司資訊</h2>
-                    <h2 class="lang-en hidden">Company Info</h2>
+        <section id="build" class="section-container">
+            <h2 class="section-title fade-in">我們打造 What We Build</h2>
+            <div class="card-grid">
+                <div class="glass-card slide-up">
+                    <div class="card-icon">⚡</div>
+                    <h3>AI建築工作流程</h3>
+                    <p class="en-sub">AI architecture workflows</p>
+                    <p>透過神經網路與深度學習最佳化建築設計至施工的端到端流程，提升效率並降低冗餘。</p>
                 </div>
+                <div class="glass-card slide-up">
+                    <div class="card-icon">🏗️</div>
+                    <h3>行動微型建築系統</h3>
+                    <p class="en-sub">Mobile micro-architecture systems</p>
+                    <p>高機動性、快速部署的模組化建築方案，適應多變的未來都市與極端環境需求。</p>
+                </div>
+                <div class="glass-card slide-up">
+                    <div class="card-icon">🧠</div>
+                    <h3>智慧空間設備</h3>
+                    <p class="en-sub">Smart spatial devices</p>
+                    <p>整合物聯網與邊緣運算的空間感測與控制中樞，打造具備感知能力的建築環境。</p>
+                </div>
+                <div class="glass-card slide-up">
+                    <div class="card-icon">🧩</div>
+                    <h3>緊湊模組化生活與工作空間</h3>
+                    <p class="en-sub">Compact modular living & workspaces</p>
+                    <p>極致空間利用率的自適應模組，提供靈活轉換的生活與高產能工作站。</p>
+                </div>
+            </div>
+        </section>
 
-                <div class="info-grid">
-                    <div class="info-row">
-                        <span class="label lang-tw">統一編號：</span>
-                        <span class="label lang-en hidden">Tax ID:</span>
-                        <span class="value">24761459</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label lang-tw">代表人：</span>
-                        <span class="label lang-en hidden">Representative:</span>
-                        <span class="value lang-tw">張懷文</span>
-                        <span class="value lang-en hidden">Chang Huai-Wen</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label lang-tw">副總：</span>
-                        <span class="label lang-en hidden">VP:</span>
-                        <span class="value lang-tw">張愷恩</span>
-                        <span class="value lang-en hidden">Chang Kai-En</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label lang-tw">聯絡信箱：</span>
-                        <span class="label lang-en hidden">Email:</span>
-                        <span class="value"><a href="mailto:dev@microarchi.tech">dev@microarchi.tech</a></span>
-                    </div>
-                    <div class="info-row">
-                        <span class="label lang-tw">網站：</span>
-                        <span class="label lang-en hidden">Website:</span>
-                        <span class="value"><a href="http://microarchi.tech">microarchi.tech</a></span>
+        <section id="showcase" class="section-container">
+            <h2 class="section-title fade-in">技術展示 Technology Showcase</h2>
+            <div class="feature-tiles">
+                <div class="tile fade-in">
+                    <div class="tile-content">
+                        <h3>AI輔助設計分析</h3>
+                        <p>AI-assisted design analysis</p>
                     </div>
                 </div>
-            </section>
+                <div class="tile fade-in">
+                    <div class="tile-content">
+                        <h3>感測感知建築設備</h3>
+                        <p>Sensor-aware architectural devices</p>
+                    </div>
+                </div>
+                <div class="tile fade-in">
+                    <div class="tile-content">
+                        <h3>數據驅動空間規劃</h3>
+                        <p>Data-driven spatial planning</p>
+                    </div>
+                </div>
+                <div class="tile fade-in">
+                    <div class="tile-content">
+                        <h3>緊湊智慧結構</h3>
+                        <p>Compact intelligent structures</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <section class="business-focus">
-                <div class="info-item">
-                    <h2 class="lang-tw">業務重點</h2>
-                    <h2 class="lang-en hidden">Business Focus</h2>
+        <section id="company" class="section-container">
+            <div class="company-card glass-card fade-in">
+                <h2>公司資訊 Company Information</h2>
+                <div class="company-info-grid">
+                    <div class="info-group">
+                        <span class="info-label">統一編號 Tax ID</span>
+                        <span class="info-value">24761459</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">代表人 Representative</span>
+                        <span class="info-value">張懷文 Huai-Wen Chang</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">副總 VP</span>
+                        <span class="info-value">張愷恩 Kai-En Chang</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">網站 Website</span>
+                        <span class="info-value"><a href="http://microarchi.tech">microarchi.tech</a></span>
+                    </div>
                 </div>
-                <div class="content lang-tw">
-                    <p>AI與建築科技設備</p>
-                    <p>行動微型建築</p>
-                    <p>智慧建築工具</p>
-                    <p>緊湊空間系統</p>
-                    <p>專注於建築的AI工作流程</p>
-                </div>
-                <div class="content lang-en hidden">
-                    <p>AI and technology devices for architecture</p>
-                    <p>Mobile micro-architecture</p>
-                    <p>Intelligent building tools</p>
-                    <p>Compact spatial systems</p>
-                    <p>Architecture-focused AI workflows</p>
-                </div>
-            </section>
-        </main>
+            </div>
+        </section>
 
-        <footer>
-            <p class="lang-tw">&copy; 2024 台灣行動微型建築有限公司. 保留所有權利。</p>
-            <p class="lang-en hidden">&copy; 2024 Microarchi.tech. All rights reserved.</p>
-        </footer>
-    </div>
+        <section id="contact" class="section-container contact-section fade-in">
+            <h2>Let’s build the future of intelligent micro-architecture.</h2>
+            <p>與我們攜手打造智慧微型建築的未來。</p>
+            <a href="mailto:dev@microarchi.tech" class="btn btn-primary btn-large">聯繫我們 dev@microarchi.tech</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 台灣行動微型建築有限公司 Microarchi.tech. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

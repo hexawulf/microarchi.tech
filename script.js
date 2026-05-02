@@ -1,26 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const btnTw = document.getElementById('lang-tw');
-    const btnEn = document.getElementById('lang-en');
-    const elementsTw = document.querySelectorAll('.lang-tw');
-    const elementsEn = document.querySelectorAll('.lang-en');
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
 
-    btnTw.addEventListener('click', () => {
-        btnTw.classList.add('active');
-        btnEn.classList.remove('active');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optional: Stop observing once visible if you only want it to animate once
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-        elementsTw.forEach(el => el.classList.remove('hidden'));
-        elementsEn.forEach(el => el.classList.add('hidden'));
+    // Observe elements with animation classes
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-up');
+    animatedElements.forEach(el => observer.observe(el));
 
-        document.documentElement.lang = 'zh-TW';
+    // Staggered delay for cards in the grid
+    const cards = document.querySelectorAll('.card-grid .slide-up');
+    cards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.15}s`;
     });
 
-    btnEn.addEventListener('click', () => {
-        btnEn.classList.add('active');
-        btnTw.classList.remove('active');
-
-        elementsEn.forEach(el => el.classList.remove('hidden'));
-        elementsTw.forEach(el => el.classList.add('hidden'));
-
-        document.documentElement.lang = 'en';
+    // Staggered delay for feature tiles
+    const tiles = document.querySelectorAll('.feature-tiles .fade-in');
+    tiles.forEach((tile, index) => {
+        tile.style.transitionDelay = `${index * 0.15}s`;
     });
 });
