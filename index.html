@@ -3,136 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microarchi.tech | 台灣行動微型建築有限公司</title>
+    <title>Microarchi.tech | Architecture, computed.</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600&family=Geist+Mono&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="css-grid-bg"></div>
-    <div class="glow-overlay"></div>
+    <div class="bg-elements" aria-hidden="true">
+        <div class="gradient-glow"></div>
+        <div class="dot-grid"></div>
+    </div>
 
     <header class="navbar">
-        <div class="logo">Microarchi.tech</div>
-        <nav>
-            <button class="nav-btn" onclick="document.getElementById('build').scrollIntoView({behavior: 'smooth'})">技術領域</button>
-            <button class="nav-btn" onclick="document.getElementById('showcase').scrollIntoView({behavior: 'smooth'})">產品特色</button>
-            <button class="nav-btn" onclick="document.getElementById('company').scrollIntoView({behavior: 'smooth'})">關於我們</button>
-        </nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" stroke="currentColor" stroke-width="2"/>
+                    <rect x="7" y="7" width="10" height="10" fill="currentColor"/>
+                </svg>
+                <span class="wordmark">Microarchi</span>
+            </div>
+            <nav>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#focus" class="nav-link">Focus</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="hero fade-in">
-            <div class="hero-content">
-                <h1 class="hero-title">台灣行動微型建築有限公司</h1>
-                <h2 class="hero-subtitle">Microarchi.tech</h2>
-                <p class="hero-description">AI-powered spatial intelligence for mobile micro-architecture.<br>為行動微型建築注入 AI 空間智能。</p>
-
-                <div class="hero-cta">
-                    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">聯絡我們 Contact us</button>
-                    <button class="btn btn-secondary" onclick="document.getElementById('build').scrollIntoView({behavior: 'smooth'})">探索技術 Explore technology</button>
+        <section id="hero" class="hero section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="eyebrow fade-up" style="--delay: 0.05s">
+                        <span class="mono">TAIPEI · TW · EST. 2014</span>
+                    </div>
+                    <h1 class="hero-headline fade-up" style="--delay: 0.18s">
+                        Architecture, <br><span class="accent-italic">computed.</span>
+                    </h1>
+                    <div class="hero-subline fade-up" style="--delay: 0.32s">
+                        <p class="en">AI-powered spatial intelligence for mobile micro-architecture.</p>
+                        <p class="zh">為行動微型建築注入 AI 空間智能。</p>
+                    </div>
+                    <div class="hero-meta fade-up" style="--delay: 0.4s">
+                        <div class="meta-item">
+                            <span class="label mono">Tax ID</span>
+                            <span class="value mono">24761459</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label mono">Showcase</span>
+                            <span class="value mono">Computex 2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label mono">Origin</span>
+                            <span class="value mono">Taipei · 北投</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="hero-visual">
-                <div class="abstract-shape shape-1"></div>
-                <div class="abstract-shape shape-2"></div>
-                <div class="abstract-shape shape-3"></div>
+                <div class="hero-visual fade-up" style="--delay: 0.55s" aria-hidden="true">
+                    <svg class="wireframe-svg" viewBox="0 0 600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Foundation Pads -->
+                        <g class="layer-foundations">
+                            <rect class="heavy" x="150" y="620" width="40" height="20" />
+                            <rect class="heavy" x="410" y="620" width="40" height="20" />
+                            <rect class="heavy" x="200" y="580" width="40" height="20" />
+                            <rect class="heavy" x="460" y="580" width="40" height="20" />
+                        </g>
+                        <!-- Leader lines -->
+                        <path class="light leader" d="M170 620V590M430 620V590M220 580V550M480 580V550" />
+
+                        <!-- Floor Slab -->
+                        <g class="layer-floor">
+                            <path class="heavy" d="M150 590L410 590L510 510L250 510Z" />
+                            <path class="light" d="M200 590L300 510M250 590L350 510M300 590L400 510M350 590L450 510" />
+                        </g>
+                        <path class="light leader" d="M150 510V460M510 430V380" />
+
+                        <!-- Structural Frame -->
+                        <g class="layer-frame">
+                            <path class="heavy" d="M150 510V310M410 510V310M510 430V230M250 430V230" />
+                            <path class="heavy" d="M150 310L410 310L510 230L250 230Z" />
+                        </g>
+
+                        <!-- Mezzanine -->
+                        <g class="layer-mezzanine">
+                            <path class="medium" d="M150 410L280 410L330 370L200 370Z" />
+                            <path class="heavy" d="M280 410V390M330 370V350" />
+                        </g>
+
+                        <!-- Walls -->
+                        <g class="layer-walls">
+                            <path class="medium" d="M150 310V110L280 110V310" />
+                            <path class="medium" d="M410 310V110L510 30V230" />
+                            <!-- Door/Windows -->
+                            <rect class="light" x="180" y="210" width="40" height="80" />
+                            <rect class="light" x="440" y="150" width="30" height="40" />
+                        </g>
+
+                        <!-- Roof -->
+                        <g class="layer-roof">
+                            <path class="heavy" d="M130 110L430 110L530 30L230 30Z" />
+                            <rect class="medium" x="300" y="50" width="40" height="20" />
+                        </g>
+
+                        <!-- Annotations & Grid -->
+                        <g class="layer-axes">
+                            <circle class="light" cx="150" cy="650" r="10" /> <text x="146" y="654" class="mono-label">A</text>
+                            <circle class="light" cx="410" cy="650" r="10" /> <text x="406" y="654" class="mono-label">B</text>
+                            <path class="light" d="M150 640V590M410 640V590" stroke-dasharray="2 2" />
+                        </g>
+
+                        <g class="layer-dimensions">
+                            <path class="light" d="M100 590V110" />
+                            <path class="light" d="M95 590H105M95 110H105" />
+                            <text x="70" y="350" class="mono-label" transform="rotate(-90 70 350)">5800</text>
+                        </g>
+
+                        <g class="layer-annotations">
+                            <text x="450" y="680" class="mono-label">SCALE 1:50</text>
+                            <path class="heavy" d="M450 690H550" />
+                            <path class="heavy" d="M450 685V695M500 685V695M550 685V695" />
+                            
+                            <text x="50" y="680" class="mono-label" style="fill: var(--slate-400)">MMA-01 · MODULAR UNIT</text>
+                            <text x="50" y="695" class="mono-label" style="fill: var(--slate-400)">AXONOMETRIC · EXPLODED</text>
+                            <text x="50" y="710" class="mono-label" style="fill: var(--slate-400)">SCALE 1:50</text>
+                        </g>
+
+                        <!-- Vertex markers -->
+                        <circle cx="150" cy="590" r="2.5" fill="var(--ink)" />
+                        <circle cx="410" cy="590" r="2.5" fill="var(--ink)" />
+                        <circle cx="150" cy="310" r="2.5" fill="var(--ink)" />
+                        <circle cx="410" cy="310" r="2.5" fill="var(--ink)" />
+                    </svg>
+                </div>
             </div>
         </section>
 
-        <section id="build" class="section-container">
-            <h2 class="section-title fade-in">我們打造 What We Build</h2>
-            <div class="card-grid">
-                <div class="glass-card slide-up">
-                    <div class="card-icon">⚡</div>
-                    <h3>AI建築工作流程</h3>
-                    <p class="en-sub">AI architecture workflows</p>
-                    <p>透過神經網路與深度學習最佳化建築設計至施工的端到端流程，提升效率並降低冗餘。</p>
-                </div>
-                <div class="glass-card slide-up">
-                    <div class="card-icon">🏗️</div>
-                    <h3>行動微型建築系統</h3>
-                    <p class="en-sub">Mobile micro-architecture systems</p>
-                    <p>高機動性、快速部署的模組化建築方案，適應多變的未來都市與極端環境需求。</p>
-                </div>
-                <div class="glass-card slide-up">
-                    <div class="card-icon">🧠</div>
-                    <h3>智慧空間設備</h3>
-                    <p class="en-sub">Smart spatial devices</p>
-                    <p>整合物聯網與邊緣運算的空間感測與控制中樞，打造具備感知能力的建築環境。</p>
-                </div>
-                <div class="glass-card slide-up">
-                    <div class="card-icon">🧩</div>
-                    <h3>緊湊模組化生活與工作空間</h3>
-                    <p class="en-sub">Compact modular living & workspaces</p>
-                    <p>極致空間利用率的自適應模組，提供靈活轉換的生活與高產能工作站。</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="showcase" class="section-container">
-            <h2 class="section-title fade-in">技術展示 Technology Showcase</h2>
-            <div class="feature-tiles">
-                <div class="tile fade-in">
-                    <div class="tile-content">
-                        <h3>AI輔助設計分析</h3>
-                        <p>AI-assisted design analysis</p>
-                    </div>
-                </div>
-                <div class="tile fade-in">
-                    <div class="tile-content">
-                        <h3>感測感知建築設備</h3>
-                        <p>Sensor-aware architectural devices</p>
-                    </div>
-                </div>
-                <div class="tile fade-in">
-                    <div class="tile-content">
-                        <h3>數據驅動空間規劃</h3>
-                        <p>Data-driven spatial planning</p>
-                    </div>
-                </div>
-                <div class="tile fade-in">
-                    <div class="tile-content">
-                        <h3>緊湊智慧結構</h3>
-                        <p>Compact intelligent structures</p>
+        <section id="about" class="section reveal">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-number mono">01</span>
+                    <h2 class="section-title">About</h2>
+                </header>
+                <div class="section-content split-grid">
+                    <div class="text-block">
+                        <p class="lead">We bridge the gap between computational intelligence and physical modularity.</p>
+                        <p>Founded in 2014, Microarchi.tech focuses on high-performance spatial systems that adapt to the demands of modern urban environments. Our work leverages AI to optimize every phase of the architectural lifecycle, from initial generative design to long-term edge computing integration.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="company" class="section-container">
-            <div class="company-card glass-card fade-in">
-                <h2>公司資訊 Company Information</h2>
-                <div class="company-info-grid">
-                    <div class="info-group">
-                        <span class="info-label">統一編號 Tax ID</span>
-                        <span class="info-value">24761459</span>
+        <section id="focus" class="section reveal">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-number mono">02</span>
+                    <h2 class="section-title">Focus</h2>
+                </header>
+                <div class="focus-list">
+                    <div class="focus-item">
+                        <span class="focus-id mono">/01</span>
+                        <div class="focus-body">
+                            <h3>AI for Architecture · <span class="zh-inline">建築人工智慧</span></h3>
+                            <p>Neural networks optimized for spatial generative design and structural efficiency.</p>
+                        </div>
                     </div>
-                    <div class="info-group">
-                        <span class="info-label">代表人 Representative</span>
-                        <span class="info-value">張懷文 Huai-Wen Chang</span>
+                    <div class="focus-item">
+                        <span class="focus-id mono">/02</span>
+                        <div class="focus-body">
+                            <h3>Mobile Micro-Architecture · <span class="zh-inline">行動微型建築</span></h3>
+                            <p>High-mobility modular solutions for rapid deployment in urban and extreme contexts.</p>
+                        </div>
                     </div>
-                    <div class="info-group">
-                        <span class="info-label">副總 VP</span>
-                        <span class="info-value">張愷恩 Kai-En Chang</span>
+                    <div class="focus-item">
+                        <span class="focus-id mono">/03</span>
+                        <div class="focus-body">
+                            <h3>Intelligent Building Tools · <span class="zh-inline">智能建築工具</span></h3>
+                            <p>Edge computing hubs for real-time spatial sensing and adaptive environment control.</p>
+                        </div>
                     </div>
-                    <div class="info-group">
-                        <span class="info-label">網站 Website</span>
-                        <span class="info-value"><a href="http://microarchi.tech">microarchi.tech</a></span>
+                    <div class="focus-item">
+                        <span class="focus-id mono">/04</span>
+                        <div class="focus-body">
+                            <h3>Compact Spatial Systems · <span class="zh-inline">緊湊空間系統</span></h3>
+                            <p>Adaptive modules designed for maximum utility within minimal footprints.</p>
+                        </div>
+                    </div>
+                    <div class="focus-item">
+                        <span class="focus-id mono">/05</span>
+                        <div class="focus-body">
+                            <h3>Architecture-Focused AI Workflows · <span class="zh-inline">建築導向 AI 工作流程</span></h3>
+                            <p>End-to-end integration of deep learning to eliminate redundancy in architectural delivery.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section-container contact-section fade-in">
-            <h2>Let’s build the future of intelligent micro-architecture.</h2>
-            <p>與我們攜手打造智慧微型建築的未來。</p>
-            <a href="mailto:dev@microarchi.tech" class="btn btn-primary btn-large">聯繫我們 dev@microarchi.tech</a>
+        <section id="registry" class="section reveal">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-number mono">03</span>
+                    <h2 class="section-title">Registry</h2>
+                </header>
+                <div class="registry-grid">
+                    <div class="registry-cell">
+                        <span class="label mono">Legal Name</span>
+                        <span class="value">台灣行動微型建築有限公司</span>
+                    </div>
+                    <div class="registry-cell">
+                        <span class="label mono">Tax ID</span>
+                        <span class="value">24761459</span>
+                    </div>
+                    <div class="registry-cell">
+                        <span class="label mono">Director</span>
+                        <span class="value">張懷文 / Chang Huai-Wen</span>
+                    </div>
+                    <div class="registry-cell">
+                        <span class="label mono">VP</span>
+                        <span class="value">張愷恩 / Chang Kai-En</span>
+                    </div>
+                    <div class="registry-cell">
+                        <span class="label mono">Registered Address</span>
+                        <span class="value">臺北市北投區大業路 631 之 5 號</span>
+                    </div>
+                    <div class="registry-cell">
+                        <span class="label mono">Established</span>
+                        <span class="value">2014.10.24</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section reveal">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-number mono">04</span>
+                    <h2 class="section-title">Contact</h2>
+                </header>
+                <div class="contact-content">
+                    <a href="mailto:dev@microarchi.tech" class="massive-link accent-italic">dev@microarchi.tech</a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 台灣行動微型建築有限公司 Microarchi.tech. All rights reserved.</p>
+    <footer class="footer">
+        <div class="container footer-container mono">
+            <div class="footer-left">
+                © 2026 Microarchi.tech · 台灣行動微型建築有限公司
+            </div>
+            <div class="footer-right">
+                Built for Computex · Taipei
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
