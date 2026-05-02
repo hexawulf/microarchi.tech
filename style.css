@@ -235,48 +235,85 @@ nav {
     font-size: 0.95rem;
 }
 
-/* Wireframe SVG Animation */
+/* Hero ZH name */
+.hero-zh-name {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+    color: var(--slate-600);
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+/* Floor Plan / Die Layout SVG */
 .hero-visual {
     position: relative;
 }
 
-.wireframe-svg {
-    width: clamp(22rem, 42vw, 38rem);
+.floorplan-svg {
+    width: clamp(22rem, 40vw, 36rem);
     height: auto;
-    opacity: 0.85;
+    opacity: 0.92;
 }
 
-.wireframe-svg .heavy, 
-.wireframe-svg .medium {
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 2000;
-    animation: drawPath 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-}
-
-.wireframe-svg .heavy { stroke: var(--ink); stroke-width: 1.5px; stroke-opacity: 0.55; }
-.wireframe-svg .medium { stroke: var(--slate-400); stroke-width: 1px; }
-.wireframe-svg .light { stroke: var(--slate-300); stroke-width: 0.5px; }
-.wireframe-svg .leader { stroke-dasharray: 2 2; }
-.wireframe-svg .mono-label { 
-    font-family: var(--font-mono); 
-    font-size: 9px; 
-    fill: var(--slate-400); 
+.fp-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    fill: var(--slate-500);
     text-transform: uppercase;
 }
 
-/* Staggered animation for SVG layers */
-.layer-roof * { animation-delay: 0.1s; }
-.layer-walls * { animation-delay: 0.2s; }
-.layer-mezzanine * { animation-delay: 0.3s; }
-.layer-frame * { animation-delay: 0.4s; }
-.layer-floor * { animation-delay: 0.5s; }
-.layer-foundations * { animation-delay: 0.6s; }
-.layer-axes * { animation-delay: 0.7s; }
-.layer-dimensions * { animation-delay: 0.8s; }
-.layer-annotations * { animation-delay: 0.9s; }
+/* Draw-on animation for frame, block, trace elements */
+.floorplan-svg .frame,
+.floorplan-svg .block,
+.floorplan-svg .trace {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: drawOn 1.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
 
-@keyframes drawPath {
+.floorplan-svg .frame    { animation-delay: 0s; }
+.floorplan-svg .block    { animation-delay: 0.3s; }
+.floorplan-svg .trace    { animation-delay: 0.6s; }
+.floorplan-svg .annotation { animation: fpFadeIn 0.6s ease forwards; animation-delay: 1.2s; opacity: 0; }
+.floorplan-svg .ring-bus   { animation: fpFadeIn 0.6s ease forwards; animation-delay: 0.9s; opacity: 0; }
+
+@keyframes drawOn {
     to { stroke-dashoffset: 0; }
+}
+
+@keyframes fpFadeIn {
+    to { opacity: 1; }
+}
+
+/* Active core breathing */
+.floorplan-svg .core-breathe {
+    animation: drawOn 1.4s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+               coreBreathe 3.2s cubic-bezier(0.4, 0, 0.6, 1) 1.5s infinite;
+}
+
+.floorplan-svg .pulse-inner {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: drawOn 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.3s forwards,
+               pulseInner 4s linear 1.5s infinite;
+    transform-origin: 200px 200px;
+}
+
+@keyframes coreBreathe {
+    0%, 100% { stroke-opacity: 0.6; }
+    50%       { stroke-opacity: 1; }
+}
+
+@keyframes pulseInner {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(0.92); }
+}
+
+/* Pulse dots — hidden until draw-on done, then animate */
+.floorplan-svg .pulse {
+    opacity: 0;
+    animation: fpFadeIn 0.1s ease 1.5s forwards;
 }
 
 /* Sections Content */
@@ -532,5 +569,13 @@ nav {
     .split-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floorplan-svg .pulse,
+    .floorplan-svg .core-breathe,
+    .floorplan-svg .pulse-inner {
+        animation: none;
     }
 }
