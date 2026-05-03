@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Preview - microarchi.tech</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F8FAFC;
+            color: #0A0E14;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 { margin-bottom: 40px; }
+        .preview-section {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 600px;
+        }
+        .preview-section.slate {
+            background-color: #F1F5F9;
+        }
+        .preview-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .preview-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .label {
+            font-size: 12px;
+            color: #64748B;
+        }
+        img {
+            image-rendering: pixelated; /* Help see the grid at small sizes */
+            border: 1px solid #CBD5E1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Favicon Preview</h1>
+
+    <div class="preview-section">
+        <h3>On White Background</h3>
+        <div class="preview-row">
+            <div class="preview-item">
+                <img src="favicon.svg" width="16" height="16" alt="16px">
+                <span class="label">16px</span>
+            </div>
+            <div class="preview-item">
+                <img src="favicon.svg" width="32" height="32" alt="32px">
+                <span class="label">32px</span>
+            </div>
+            <div class="preview-item">
+                <img src="favicon.svg" width="128" height="128" alt="128px">
+                <span class="label">128px</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-section slate">
+        <h3>On Slate-100 Background (#F1F5F9)</h3>
+        <div class="preview-row">
+            <div class="preview-item">
+                <img src="favicon.svg" width="16" height="16" alt="16px">
+                <span class="label">16px</span>
+            </div>
+            <div class="preview-item">
+                <img src="favicon.svg" width="32" height="32" alt="32px">
+                <span class="label">32px</span>
+            </div>
+            <div class="preview-item">
+                <img src="favicon.svg" width="128" height="128" alt="128px">
+                <span class="label">128px</span>
+            </div>
+        </div>
+    </div>
+
+    <p>Check legibility, asymmetry, and alignment.</p>
+</body>
+</html>
