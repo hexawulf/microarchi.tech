@@ -429,35 +429,126 @@ nav {
 
 /* Contact Section */
 .contact-content {
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 
-.massive-link {
-    font-size: clamp(2rem, 6.4vw, 5.4rem);
-    font-weight: 300;
-    letter-spacing: -0.03em;
-    text-decoration: none;
+.contact-card {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem;
+    border: 1px solid var(--slate-200);
+    background: var(--slate-50);
     position: relative;
-    display: inline-block;
+    max-width: 100%;
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--slate-400);
+    font-size: 0.65rem;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--slate-400);
+    border-radius: 50%;
+}
+
+.contact-body {
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.email-link {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: var(--ink);
+    position: relative;
+}
+
+.email-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--ink);
+    transform: scaleX(0.2);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.email-link:hover::after {
+    transform: scaleX(1);
+}
+
+.copy-btn {
+    background: none;
+    border: 1px solid var(--slate-200);
+    padding: 0.5rem 0.75rem;
+    color: var(--slate-500);
+    cursor: pointer;
+    font-size: 0.65rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    margin-bottom: 0.25rem;
+}
+
+.copy-btn:hover {
+    border-color: var(--slate-400);
     color: var(--ink);
 }
 
-.massive-link::after {
-    content: '';
+.copy-success {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--slate-500);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 150%);
+    transition: transform 0.3s ease;
 }
 
-.massive-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+.copy-btn.copied .copy-text {
+    transform: translateY(-150%);
+}
+
+.copy-btn.copied .copy-success {
+    transform: translate(-50%, -50%);
+}
+
+.copy-text {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.contact-footer {
+    color: var(--slate-400);
+    font-size: 0.65rem;
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        padding: 2rem;
+        width: 100%;
+    }
+    
+    .contact-body {
+        gap: 1rem;
+    }
+    
+    .copy-btn {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* Footer */
